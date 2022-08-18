@@ -1,0 +1,18 @@
+<!ELEMENT p2pse (getHosts?, getHostsResponse?, searchFile?, searchFileResponse?, getFiles?, getFilesResponse?)>
+  <!ELEMENT getHosts EMPTY>
+  <!ELEMENT getHostsResponse (host*)>
+     <!ELEMENT host (ip?,port?)>
+        <!ELEMENT ip (#PCDATA)> 
+        <!ELEMENT port (#PCDATA)> 
+  <!ELEMENT searchFile (keywords?)>
+     <!ELEMENT keywords (#PCDATA)>
+  <!ELEMENT searchFileResponse (file*)>
+     <!ELEMENT file (fileName?, fileSize?)>
+        <!ELEMENT fileName (#PCDATA)> 
+        <!ELEMENT fileSize (#PCDATA)> 
+  <!ELEMENT getFiles (fileName*)>    
+  <!ELEMENT getFilesResponse (fileData*)>
+     <!ELEMENT fileData (fileName?, data?)> 
+        <!ELEMENT data (#PCDATA)> 
+        <!ATTLIST data encode CDATA #REQUIRED>
+
